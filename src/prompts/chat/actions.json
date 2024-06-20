@@ -1,0 +1,71 @@
+[
+  {
+    "name": "Apis_List",
+    "description": "Returns a collection of APIs.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "object",
+          "properties": {
+            "api-version": {
+              "minLength": 1,
+              "type": "string",
+              "description": "The API version to use for this operation."
+            },
+            "$filter": {
+              "type": "string",
+              "x-ms-parameter-location": "method",
+              "x-ms-client-name": "filter",
+              "description": "OData filter parameter."
+            }
+          },
+          "required": [
+            "api-version"
+          ]
+        },
+        "path": {
+          "type": "object",
+          "properties": {
+            "subscriptionId": {
+              "type": "string",
+              "format": "uuid",
+              "description": "The ID of the target subscription. The value must be an UUID."
+            },
+            "resourceGroupName": {
+              "maxLength": 90,
+              "minLength": 1,
+              "type": "string",
+              "x-ms-parameter-location": "method",
+              "description": "The name of the resource group. The name is case insensitive."
+            },
+            "serviceName": {
+              "maxLength": 90,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9-]{3,90}$",
+              "type": "string",
+              "description": "The name of Azure API Center service."
+            },
+            "workspaceName": {
+              "maxLength": 90,
+              "minLength": 1,
+              "pattern": "^[a-zA-Z0-9-]{3,90}$",
+              "type": "string",
+              "description": "The name of the workspace."
+            }
+          },
+          "required": [
+            "subscriptionId",
+            "resourceGroupName",
+            "serviceName",
+            "workspaceName"
+          ]
+        }
+      },
+      "required": [
+        "query",
+        "path"
+      ]
+    }
+  }
+]

@@ -1,0 +1,105 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "$data": "${value}",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "value.properties.title: ${if(properties.title, properties.title, 'N/A')}",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "value.properties.kind: ${if(properties.kind, properties.kind, 'N/A')}",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "value.properties.description: ${if(properties.description, properties.description, 'N/A')}",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "value.properties.summary: ${if(properties.summary, properties.summary, 'N/A')}",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "value.properties.lifecycleStage: ${if(properties.lifecycleStage, properties.lifecycleStage, 'N/A')}",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "value.properties.termsOfService.url: ${if(properties.termsOfService.url, properties.termsOfService.url, 'N/A')}",
+          "wrap": true
+        },
+        {
+          "type": "Container",
+          "$data": "${properties.externalDocumentation}",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "properties.externalDocumentation.title: ${if(title, title, 'N/A')}",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "properties.externalDocumentation.description: ${if(description, description, 'N/A')}",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "properties.externalDocumentation.url: ${if(url, url, 'N/A')}",
+              "wrap": true
+            }
+          ]
+        },
+        {
+          "type": "Container",
+          "$data": "${properties.contacts}",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "properties.contacts.name: ${if(name, name, 'N/A')}",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "properties.contacts.url: ${if(url, url, 'N/A')}",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "properties.contacts.email: ${if(email, email, 'N/A')}",
+              "wrap": true
+            }
+          ]
+        },
+        {
+          "type": "TextBlock",
+          "text": "value.properties.license.name: ${if(properties.license.name, properties.license.name, 'N/A')}",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "value.properties.license.url: ${if(properties.license.url, properties.license.url, 'N/A')}",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "value.properties.license.identifier: ${if(properties.license.identifier, properties.license.identifier, 'N/A')}",
+          "wrap": true
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "nextLink: ${if(nextLink, nextLink, 'N/A')}",
+      "wrap": true
+    }
+  ]
+}
